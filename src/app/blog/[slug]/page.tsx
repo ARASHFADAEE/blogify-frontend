@@ -3,13 +3,14 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
 interface PostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function PostPage({ params }: PostPageProps) {
-  const post = getPostWithDetails(params.slug);
+export default async function PostPage({ params }: PostPageProps) {
+  const { slug } = await params;
+  const post = getPostWithDetails(slug);
   
   if (!post) {
     notFound();
