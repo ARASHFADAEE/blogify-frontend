@@ -6,6 +6,9 @@ const MainContent = () => {
   const popularPosts = getPopularPosts(5);
   const categories = getCategories();
 
+  // بخش برگزیده‌ها (Featured Categories)
+  const featuredCategories = categories.slice(0, 4);
+
   return (
     <section className="position-relative">
       <div className="container" data-sticky-container>
@@ -35,7 +38,16 @@ const MainContent = () => {
                         )}
                         {/* Card overlay bottom */}
                         <div className="w-100 mt-auto">
-                          <Link href="#" className={`badge text-bg-${getCategoryById(post.category_id)?.color} mb-2`}><i className="fas fa-circle me-2 small fw-bold"></i>{getCategoryById(post.category_id)?.name}</Link>
+                          {post.category_id && (
+                            (() => {
+                              const cat = getCategoryById(post.category_id);
+                              return cat ? (
+                                <Link href={`/category/${cat.slug}`} className={`badge text-bg-${cat.color || 'primary'} mb-2 me-2`}>
+                                  <i className="fas fa-circle me-2 small fw-bold"></i>{cat.name}
+                                </Link>
+                              ) : null;
+                            })()
+                          )}
                         </div>
                       </div>
                     </div>
@@ -108,15 +120,25 @@ const MainContent = () => {
               {/* Trending topics widget START */}
               <div>
                 <h4 className="mt-4 mb-3">برگزیده ها</h4>
-                {categories.slice(0, 5).map((cat, i) => (
-                  <div key={cat.id} className={`text-center mb-3 card-bg-scale position-relative overflow-hidden rounded${i === 0 ? ' bg-dark-overlay-4' : ''}`} style={{backgroundImage: `url(/assets/images/blog/4by3/0${i+1}.jpg)`, backgroundPosition: 'center left', backgroundSize: 'cover'}}>
-                    <div className={i === 0 ? 'p-3' : 'bg-dark-overlay-4 p-3'}>
-                      <Link href="#" className="stretched-link btn-link text-white h5">{cat.name}</Link>
+                {featuredCategories.map((cat, idx) => (
+                  <div
+                    key={cat.id}
+                    className={`text-center mb-3 card-bg-scale position-relative overflow-hidden rounded${idx === 0 ? ' bg-dark-overlay-4' : ''}`}
+                    style={{
+                      backgroundImage: `url(/assets/images/blog/4by3/0${cat.id}.jpg)`,
+                      backgroundPosition: 'left center',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                    <div className={idx === 0 ? 'p-3' : 'bg-dark-overlay-4 p-3'}>
+                      <Link href={`/category/${cat.slug}`} className="stretched-link btn-link text-white h5">
+                        {cat.name}
+                      </Link>
                     </div>
                   </div>
                 ))}
                 <div className="text-center mt-3">
-                  <Link href="#" className="text-body text-primary-hover"><u>مشاهده همه</u></Link>
+                  <Link className="text-body text-primary-hover" href="/categories"><u>مشاهده همه</u></Link>
                 </div>
               </div>
               {/* Trending topics widget END */}

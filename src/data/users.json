@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "سهیلا صالحی",
+    "slug": "soheila-salehi",
     "email": "soheila@example.com",
     "role": "author",
     "avatar": "/assets/images/avatar/11.jpg",
@@ -12,6 +13,7 @@
   {
     "id": 2,
     "name": "مهدی راد",
+    "slug": "mehdi-rad",
     "email": "mehdi@example.com",
     "role": "author",
     "avatar": "/assets/images/avatar/02.jpg",
@@ -22,6 +24,7 @@
   {
     "id": 3,
     "name": "مسعود خالدی",
+    "slug": "masoud-khaledi",
     "email": "masoud@example.com",
     "role": "author",
     "avatar": "/assets/images/avatar/03.jpg",
@@ -32,6 +35,7 @@
   {
     "id": 4,
     "name": "شادی اسدی",
+    "slug": "shadi-asadi",
     "email": "shadi@example.com",
     "role": "author",
     "avatar": "/assets/images/avatar/04.jpg",
@@ -42,6 +46,7 @@
   {
     "id": 5,
     "name": "ادمین",
+    "slug": "admin",
     "email": "admin@example.com",
     "role": "admin",
     "avatar": "/assets/images/avatar/01.jpg",

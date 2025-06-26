@@ -12,6 +12,7 @@ export interface User {
   bio: string;
   created_at: string;
   updated_at: string;
+  slug: string;
 }
 
 export interface Category {
@@ -137,4 +138,8 @@ export const fetchPostBySlug = async (slug: string): Promise<PostWithDetails | u
 export const fetchCategories = async (): Promise<Category[]> => {
   // In the future, this could fetch from API
   return getCategories();
-}; 
+};
+
+export function getUserBySlug(slug: string): User | undefined {
+  return getUsers().find(user => user.slug === slug);
+} 

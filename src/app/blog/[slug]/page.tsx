@@ -74,21 +74,23 @@ export default async function PostPage({ params }: PostPageProps) {
               )}
 
               {/* Author info START */}
-              <div className="d-flex p-2 p-md-4 mt-5 border rounded">
+              <div className="row p-2 p-md-4 mt-5 border rounded align-items-center g-3 flex-column flex-md-row">
                 {/* Avatar */}
-                <Link href="#">
-                  <div className="avatar avatar-xxl me-2 me-md-4">
-                    <img className="avatar-img rounded-circle" src={post.author.avatar} alt="avatar" />
-                  </div>
-                </Link>
+                <div className="col-auto text-center mb-3 mb-md-0">
+                  <Link href={`/author/${post.author.slug}`}>
+                    <div className="avatar avatar-xxl mx-auto mx-md-0">
+                      <img className="avatar-img rounded-circle" src={post.author.avatar} alt="avatar" />
+                    </div>
+                  </Link>
+                </div>
                 {/* Info */}
-                <div>
-                  <div className="d-sm-flex align-items-center justify-content-between">
+                <div className="col">
+                  <div className="d-sm-flex align-items-center justify-content-between flex-wrap">
                     <div>
-                      <h4 className="m-0"><Link href="#">{post.author.name}</Link></h4>
+                      <h4 className="m-0"><Link href={`/author/${post.author.slug}`}>{post.author.name}</Link></h4>
                       <small>روزنامه نگار سایت Blogzine</small>
                     </div>
-                    <Link href="#" className="btn btn-xs btn-primary-soft">مشاهده اخبار</Link>
+                    <Link href="#" className="btn btn-xs btn-primary-soft mt-2 mt-sm-0">مشاهده اخبار</Link>
                   </div>
                   <p className="my-2">{post.author.bio}</p>
                   {/* Social icons */}
@@ -102,7 +104,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     <li className="nav-item">
                       <Link className="nav-link px-2 fs-5" href="#"><i className="fab fa-linkedin"></i></Link>
                     </li>
-                  </ul>					
+                  </ul>
                 </div>
               </div>
               {/* Author info END */}
