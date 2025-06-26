@@ -13,6 +13,11 @@ export interface User {
   created_at: string;
   updated_at: string;
   slug: string;
+  socialLinks?: {
+    facebook?: string;
+    twitter?: string;
+    linkedin?: string;
+  };
 }
 
 export interface Category {

@@ -35,10 +35,10 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
           <div className="row">
             <div className="col-12">
               {/* Author info START */}
-              <div className="bg-primary bg-opacity-10 d-md-flex p-3 p-sm-4 my-3 text-center text-md-start rounded">
+              <div className="bg-primary bg-opacity-10 d-flex flex-column flex-md-row align-items-center p-3 p-sm-4 my-3 text-center text-md-start rounded">
                 {/* Avatar */}
-                <div className="me-0 me-md-4">
-                  <div className="avatar avatar-xxl">
+                <div className="me-0 me-md-4 mb-3 mb-md-0">
+                  <div className="avatar avatar-xxl mx-auto mx-md-0">
                     <img className="avatar-img rounded-circle" src={user.avatar} alt="avatar" />
                   </div>
                   {/* Post count */}
@@ -47,9 +47,9 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
                   </div>
                 </div>
                 {/* Info */}
-                <div>
+                <div className="flex-fill">
                   <h2 className="m-0">{user.name}</h2>
-                  <ul className="list-inline">
+                  <ul className="list-inline mb-2">
                     <li className="list-inline-item"><i className="bi bi-person-fill me-1"></i> {user.role === 'admin' ? 'مدیر' : 'نویسنده'}</li>
                     <li className="list-inline-item"><i className="bi bi-geo-alt me-1"></i> تهران</li>
                   </ul>
@@ -57,13 +57,13 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
                   {/* Social icons */}
                   <ul className="nav justify-content-center justify-content-md-start">
                     <li className="nav-item">
-                      <a className="nav-link ps-0 pe-2 fs-5" href="#"><i className="fab fa-facebook-square"></i></a>
+                      <a className="nav-link ps-0 pe-2 fs-5" href={user.socialLinks?.facebook || '#'} target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-square"></i></a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link px-2 fs-5" href="#"><i className="fab fa-twitter-square"></i></a>
+                      <a className="nav-link px-2 fs-5" href={user.socialLinks?.twitter || '#'} target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter-square"></i></a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link px-2 fs-5" href="#"><i className="fab fa-linkedin"></i></a>
+                      <a className="nav-link px-2 fs-5" href={user.socialLinks?.linkedin || '#'} target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
                     </li>
                   </ul>
                 </div>
