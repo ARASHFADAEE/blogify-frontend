@@ -70,7 +70,7 @@ const MainContent = () => {
                               <div className="avatar avatar-xs">
                                 <img className="avatar-img rounded-circle" src={getUserById(post.author_id)?.avatar} alt="avatar" />
                               </div>
-                              <span className="ms-3">با <Link href="#" className="stretched-link text-reset btn-link">{getUserById(post.author_id)?.name}</Link></span>
+                              <span className="ms-3">با <Link href={`/author/${getUserById(post.author_id)?.slug}`} className="stretched-link text-reset btn-link">{getUserById(post.author_id)?.name}</Link></span>
                             </div>
                           </div>
                         </li>

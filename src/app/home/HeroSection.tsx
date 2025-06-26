@@ -28,7 +28,7 @@ const HeroSection = () => {
                             <div className="avatar avatar-sm">
                               <img className="avatar-img rounded-circle" src={getUserById(featuredPosts[0].author_id)?.avatar} alt="avatar" />
                             </div>
-                            <span className="ms-3">با <Link href="#" className="stretched-link text-reset btn-link">{getUserById(featuredPosts[0].author_id)?.name}</Link></span>
+                            <span className="ms-3">با <Link href={`/author/${getUserById(featuredPosts[0].author_id)?.slug}`} className="stretched-link text-reset btn-link">{getUserById(featuredPosts[0].author_id)?.name}</Link></span>
                           </div>
                         </div>
                       </li>
@@ -54,7 +54,7 @@ const HeroSection = () => {
                         </h4>
                         <ul className="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
                           <li className="nav-item position-relative">
-                            <div className="nav-link">با <Link href="#" className="stretched-link text-reset btn-link">{getUserById(recentPosts[0].author_id)?.name}</Link></div>
+                            <div className="nav-link">با <Link href={`/author/${getUserById(recentPosts[0].author_id)?.slug}`} className="stretched-link text-reset btn-link">{getUserById(recentPosts[0].author_id)?.name}</Link></div>
                           </li>
                           <li className="nav-item">{new Date(recentPosts[0].created_at).toLocaleDateString('fa-IR')}</li>
                         </ul>
@@ -74,7 +74,7 @@ const HeroSection = () => {
                         </h4>
                         <ul className="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
                           <li className="nav-item position-relative">
-                            <div className="nav-link">با <Link href="#" className="stretched-link text-reset btn-link">{getUserById(post.author_id)?.name}</Link></div>
+                            <div className="nav-link">با <Link href={`/author/${getUserById(post.author_id)?.slug}`} className="stretched-link text-reset btn-link">{getUserById(post.author_id)?.name}</Link></div>
                           </li>
                           <li className="nav-item">{new Date(post.created_at).toLocaleDateString('fa-IR')}</li>
                         </ul>
