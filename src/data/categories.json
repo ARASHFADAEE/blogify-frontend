@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "تکنولوژی",
+    "slug": "technology",
+    "color": "warning",
+    "icon": "fas fa-microchip",
+    "created_at": "2023-01-01T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "اقتصاد",
+    "slug": "economy",
+    "color": "success",
+    "icon": "fas fa-chart-line",
+    "created_at": "2023-01-01T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "ورزش",
+    "slug": "sports",
+    "color": "info",
+    "icon": "fas fa-futbol",
+    "created_at": "2023-01-01T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "گردشگری",
+    "slug": "tourism",
+    "color": "danger",
+    "icon": "fas fa-plane",
+    "created_at": "2023-01-01T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": 5,
+    "name": "مگامنو",
+    "slug": "megamenu",
+    "color": "danger",
+    "icon": "fas fa-star",
+    "created_at": "2023-01-01T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": 6,
+    "name": "سبک زندگی",
+    "slug": "lifestyle",
+    "color": "primary",
+    "icon": "fas fa-heart",
+    "created_at": "2023-01-01T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": 7,
+    "name": "سلامت",
+    "slug": "health",
+    "color": "success",
+    "icon": "fas fa-heartbeat",
+    "created_at": "2023-01-01T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": 8,
+    "name": "آموزش",
+    "slug": "education",
+    "color": "info",
+    "icon": "fas fa-graduation-cap",
+    "created_at": "2023-01-01T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z"
+  }
+] 
